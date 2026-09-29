@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="ko">
@@ -702,7 +701,7 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
     <p class="hcf-sub">어디서 들어와 어디에 쓰는지, 항목별 예산까지 정해 두었습니다.</p>
   </div>
   <div class="hcf-bar">
-    <div class="hcf-callout" aria-live="polite"><b>2조 원 가운데 <em>1조 150억 원</em>이 연구와 학문에 갑니다</b><span>미래를 여는 연구 5,000억 · 학문이 자라는 공간 3,500억 · 학문의 도전을 자유롭게 1,650억</span></div>
+    <div class="hcf-callout" aria-live="polite"><b>2조 원을 <em>일곱 분야</em>에 나눠 씁니다</b><span>연구와 공간 1조 150억 · 사람과 배움 5,920억 · 다음 세대 기금 2,500억 · 대학의 경계 1,430억</span></div>
     <div class="hcf-controls" role="group" aria-label="보기 선택">
       <span class="hcf-ctl-label">대상</span>
       <div class="hcf-seg">
@@ -715,8 +714,9 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
     </div>
   </div>
   <div class="hcf-chart"></div>
+  <div class="hcf-vflow"></div>
   <div class="hcf-list">
-    <div class="hcf-lcap">재원 구조 — 신규 기금 2조 원, 어디서 들어오나</div>
+    <div class="hcf-srcpart"><div class="hcf-lcap">재원 구조 — 신규 기금 2조 원, 어디서 들어오나</div>
     <div class="hcf-srcbar">
     <i style="flex:9000" title="SNU 메가프론티어 파트너스 9,000억 원"></i>
     <i style="flex:6000" title="초대형·명명 기부 6,000억 원"></i>
@@ -730,7 +730,7 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
     <li>재단 기금</li><li class="n">3,000억 원</li>
     <li>유산 기부</li><li class="n">1,000억 원</li>
     <li>글로벌 네트워크</li><li class="n">1,000억 원</li>
-    </ul>
+    </ul></div>
     <div class="hcf-lcap">배분 구조 — 어디에 쓰나</div>
     <details class="hcf-cat" style="--c:#1e72f0"><summary><div class="hcf-sumrow"><span class="hcf-sw"></span><span class="hcf-nm">미래를 여는 연구</span><span class="hcf-amt">5,000억 원</span><svg viewBox="0 0 16 16" class="hcf-chev" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="hcf-meter"><i style="width:100%"></i></span></div></summary><ul class="hcf-items">
     <li><span class="t">기업·정부 파트너십 연구</span><span class="v">5,000억</span><span class="d">메가프론티어 대형 공동연구 · 초연결 융합연구망 플래그십 연구 · 인문사회 장기 연구 · 과제별 금액은 파트너십 약정에 따라</span></li>
@@ -814,9 +814,38 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
 #hcflow .hcf-chart svg{display:block;width:100%;height:auto;overflow:visible;max-width:none}
 #hcflow .hcf-note{font-size:12px;line-height:1.5;color:var(--hcf-muted);margin:6px 0 0}
 #hcflow .hcf-note b{color:var(--hcf-ink2);font-weight:700}
-#hcflow.hcf-narrow .hcf-chart,#hcflow.hcf-narrow .hcf-listbtn{display:none}
+#hcflow.hcf-narrow .hcf-chart{display:none}
 #hcflow.hcf-showlist .hcf-chart{display:none}
 #hcflow:not(.hcf-js) .hcf-controls{display:none}
+/* 좁은 화면: 세로 흐름도 */
+#hcflow .hcf-vflow{display:none}
+#hcflow.hcf-narrow .hcf-vflow{display:block;max-width:560px;margin:10px auto 4px}
+#hcflow.hcf-narrow.hcf-showlist .hcf-vflow{display:none}
+#hcflow .hcf-vflow svg{display:block;overflow:visible}
+#hcflow .vcap{font-size:12px;font-weight:800;fill:var(--hcf-muted);letter-spacing:1.2px}
+#hcflow .vsn{font-size:12.5px;font-weight:600;fill:var(--hcf-ink)}
+#hcflow .vsv{font-size:13px;font-weight:800;fill:var(--hcf-navy)}
+#hcflow .vhm{font-size:11.5px;font-weight:700;fill:#fff;fill-opacity:.8}
+#hcflow .vhv{font-size:17px;font-weight:900;fill:#fff}
+#hcflow .vcn{font-size:13px;font-weight:800}
+#hcflow .vcv{font-size:14.5px;font-weight:900}
+#hcflow .vch{font-size:18px;font-weight:700}
+#hcflow .vband{transition:fill-opacity .2s ease}
+#hcflow .vseg,#hcflow .vflow-hit,#hcflow .hcf-vflow .vband{cursor:pointer;-webkit-tap-highlight-color:transparent}
+#hcflow .vseg{transition:opacity .2s ease}
+#hcflow svg.vsel .vseg:not(.sel){opacity:.3}
+#hcflow svg.vsel .vband:not(.sel){fill-opacity:.1}
+#hcflow .hcf-vcap{margin:12px 0 2px}
+#hcflow details.hcf-vcat{border-bottom:1px solid var(--hcf-hair)}
+#hcflow details.hcf-vcat:last-child{border-bottom:0}
+#hcflow details.hcf-vcat > summary{list-style:none;display:block;cursor:pointer;padding:9px 0;-webkit-tap-highlight-color:transparent}
+#hcflow details.hcf-vcat > summary::-webkit-details-marker{display:none}
+#hcflow .hcf-vrow{display:grid;grid-template-columns:10px 1fr auto 16px;gap:10px;align-items:center}
+#hcflow .hcf-vrow .hcf-sw{width:10px;height:10px;border-radius:3px}
+#hcflow .hcf-vrow .hcf-nm{font-size:14.5px;font-weight:700}
+#hcflow .hcf-vrow .hcf-amt{font-size:14.5px;font-weight:800}
+#hcflow details.hcf-vcat[open] > summary .hcf-nm{font-weight:800}
+#hcflow details.hcf-vcat .hcf-items{padding:0 0 10px 20px;border-top:0}
 /* SVG 글자 */
 #hcflow .colh{font-size:12px;font-weight:800;fill:var(--hcf-muted);letter-spacing:1.5px}
 #hcflow .colh2{font-size:12px;font-weight:600;fill:var(--hcf-muted)}
@@ -903,8 +932,13 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
 #hcflow .hcf-items li.mute .bar i{background:var(--hcf-mute-node)}
 @media (max-width:680px){
   #hcflow{padding:18px 16px 14px;border-radius:14px}
-  #hcflow .hcf-callout{flex-basis:100%}
-  #hcflow .hcf-callout b{font-size:16.5px}
+  #hcflow .hcf-callout{flex-basis:100%;padding:8px 12px}
+  #hcflow .hcf-callout b{font-size:15.5px}
+  #hcflow .hcf-callout span{font-size:12.5px;line-height:1.45}
+  #hcflow .hcf-title{font-size:20px}
+  #hcflow .hcf-sub{font-size:13.5px;margin-bottom:10px}
+  #hcflow .hcf-seg button{padding:6px 12px}
+  #hcflow .hcf-controls{flex:1 1 100%;min-width:0}
 }
 @media (prefers-reduced-motion:reduce){
   #hcflow .hcf-pre .flows,#hcflow .hcf-pre .late{clip-path:none;opacity:1}
@@ -985,7 +1019,7 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
     ]
   };
   var CALLOUT = {
-    a:{b:["2조 원 가운데 ",["1조 150억 원"],"이 연구와 학문에 갑니다"], s:"미래를 여는 연구 5,000억 · 학문이 자라는 공간 3,500억 · 학문의 도전을 자유롭게 1,650억"},
+    a:{b:["2조 원을 ",["일곱 분야"],"에 나눠 씁니다"], s:"연구와 공간 1조 150억 · 사람과 배움 5,920억 · 다음 세대 기금 2,500억 · 대학의 경계 1,430억"},
     f:{b:["교원에게 직접 가는 예산"], s:"기본 교육·연구 수당 948억 · 신임교수 Seed Money 892억 · 공용 GPU 400억 · 우수 교원 인센티브 180억 · 정성평가 외부 심사 40억"},
     s:{b:["직원에게 가는 예산"], s:"급여 인상 2,085억(교원·직원) · 교직원 주택 600억 · 서울대병원 진료비 160억 · AI 행정 자동화 100억 · 직원 교육·연수 60억"},
     t:{b:["학생에게 가는 예산"], s:"장기 펠로우십 720억 · 교환학생 생활비 420억 · 외국인 학생 정주 248억 · TA 240억 · 기초소양교육 200억 · 학부생 생활비 장학 200억 · AI 소양 160억 · 다전공·공동교육 160억 · 상담·심신 건강 100억"}
@@ -1253,12 +1287,24 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
   document.addEventListener("keydown", function(e){ if(e.key === "Escape" && SVG && SVG._clear) SVG._clear(); });
 
   /* ---------- 목록 보기(휴대폰 기본, 넓은 화면은 버튼) ---------- */
+  function itemsInto(ul, c){
+    var sum = sumOf(c);
+    c.items.forEach(function(it){
+      var li = h("li", forAud(it) ? "" : "mute", null, ul);
+      h("span", "t", it.t, li);
+      h("span", it.v ? "v" : "v tag", amtOf(it), li);
+      var dtext = [it.d, it.group ? it.group.join(" · ") : "", it.note || ""].filter(Boolean).join(" · ");
+      if(dtext) h("span", "d", dtext, li);
+      if(it.v && c.items.length > 1){ var b = h("span", "bar", null, li); h("i", "", null, b).style.width = (it.v/sum*100)+"%"; }
+    });
+  }
   function renderList(){
     listBox.textContent = "";
-    h("div", "hcf-lcap", "재원 구조 — 신규 기금 2조 원, 어디서 들어오나", listBox);
-    var bar = h("div", "hcf-srcbar", null, listBox);
+    var sp = h("div", "hcf-srcpart", null, listBox);
+    h("div", "hcf-lcap", "재원 구조 — 신규 기금 2조 원, 어디서 들어오나", sp);
+    var bar = h("div", "hcf-srcbar", null, sp);
     DATA.sources.forEach(function(s){ var i = h("i", "", null, bar); i.style.flex = String(s.v); i.title = s.name+" "+fmt(s.v); });
-    var ul = h("ul", "hcf-srclist", null, listBox);
+    var ul = h("ul", "hcf-srclist", null, sp);
     DATA.sources.forEach(function(s){ h("li", "", s.name, ul); h("li", "n", fmt(s.v), ul); });
     h("div", "hcf-lcap", "배분 구조 — 어디에 쓰나", listBox);
     var maxV = Math.max.apply(null, DATA.cats.map(function(c){ return c.v; }));
@@ -1270,16 +1316,90 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
       var pth = document.createElementNS(NS, "path"); pth.setAttribute("d","M3.5 6l4.5 4.5L12.5 6"); pth.setAttribute("fill","none"); pth.setAttribute("stroke","currentColor"); pth.setAttribute("stroke-width","2"); pth.setAttribute("stroke-linecap","round"); pth.setAttribute("stroke-linejoin","round");
       chev.appendChild(pth); sm.appendChild(chev);
       var meter = h("span", "hcf-meter", null, sm); h("i", "", null, meter).style.width = (c.v/maxV*100)+"%";
-      var items = h("ul", "hcf-items", null, det), sum = sumOf(c);
-      c.items.forEach(function(it){
-        var li = h("li", forAud(it) ? "" : "mute", null, items);
-        h("span", "t", it.t, li);
-        h("span", it.v ? "v" : "v tag", amtOf(it), li);
-        var dtext = [it.d, it.group ? it.group.join(" · ") : "", it.note || ""].filter(Boolean).join(" · ");
-        if(dtext) h("span", "d", dtext, li);
-        if(it.v && c.items.length > 1){ var b = h("span", "bar", null, li); h("i", "", null, b).style.width = (it.v/sum*100)+"%"; }
-      });
+      itemsInto(h("ul", "hcf-items", null, det), c);
     });
+  }
+
+  /* ---------- 좁은 화면: 세로 흐름도(조성 경로 → 2조 원 → 7개 분야 폭 막대 + 분야 줄, 줄을 누르면 세부 항목) ---------- */
+  var vBox = root.querySelector(".hcf-vflow");
+  function vrib(a0, a1, y0, b0, b1, y1){ var m = (y0+y1)/2; return "M"+a0+","+y0+" C"+a0+","+m+" "+b0+","+m+" "+b0+","+y1+" L"+b1+","+y1+" C"+b1+","+m+" "+a1+","+m+" "+a1+","+y0+" Z"; }
+  function markV(){
+    var svg = vBox.querySelector("svg"); if(!svg) return;
+    var sel = -1;
+    var od = vBox.querySelector("details.hcf-vcat[open]"); if(od) sel = +od.dataset.i;
+    svg.classList.toggle("vsel", sel >= 0);
+    svg.querySelectorAll("[data-i]").forEach(function(n){ n.classList.toggle("sel", +n.dataset.i === sel); });
+  }
+  var vRestoring = false;
+  function toggleCat(i){ var d = vBox.querySelector('details.hcf-vcat[data-i="'+i+'"]'); if(d) d.open = !d.open; }
+  var vHubY = 0;
+  /* 분야를 열면: 2조 원 막대가 메뉴 바로 아래에 오게 해서, 나가는 줄기와 열린 세부 항목이 한 화면에 보이게 한다 */
+  function scrollToHub(){
+    var svg = vBox.querySelector("svg"); if(!svg) return;
+    var nav = document.getElementById("navShell"), navH = nav ? Math.min(nav.getBoundingClientRect().height, 120) : 0;
+    var y = svg.getBoundingClientRect().top + vHubY + (window.pageYOffset || 0) - navH - 6;
+    try { window.scrollTo({top:y, behavior:"smooth"}); } catch(e){ window.scrollTo(0, y); }
+  }
+  function renderVFlow(){
+    var od = vBox.querySelector("details.hcf-vcat[open]"), openI = od ? +od.dataset.i : -1;
+    vBox.textContent = "";
+    var w = Math.min(vBox.clientWidth, 560); if(!w) return;
+    var n = DATA.sources.length, m = DATA.cats.length, ROW = 17, top0 = 19, G = 3;
+    var F1 = 58, F2 = 66;   /* 모여 들어오는 줄기, 나가는 줄기 길이 */
+    var yb = top0 + n*ROW + 2, yh = yb + 8 + F1, HUB = 34, yh2 = yh + HUB, yc = yh2 + F2, H = yc + 10;
+    vHubY = yh;
+    var svg = el("svg", {viewBox:"0 0 "+w+" "+H, width:w, height:H, role:"img", "aria-label":"신규 기금 2조 원 흐름도. 조성 경로 5개에서 들어와 7개 분야로 쓰입니다. 아래 분야를 누르면 세부 항목이 펼쳐집니다."});
+    vBox.appendChild(svg);
+    el("text", {x:0, y:11, "class":"vcap", text:"재원 구조"}, svg);
+    var op = [1, .8, .62, .46, .32];
+    DATA.sources.forEach(function(s, i){
+      var ry = top0 + i*ROW;
+      el("rect", {x:0, y:ry+2.5, width:10, height:10, rx:3, fill:"#10253f", "fill-opacity":op[i]}, svg);
+      el("text", {x:17, y:ry+12, "class":"vsn", text:s.name}, svg);
+      el("text", {x:w, y:ry+12, "text-anchor":"end", "class":"vsv", text:fmt(s.v)}, svg);
+    });
+    var avS = w - G*(n-1), sx = 0, hx = 0;
+    DATA.sources.forEach(function(s, i){
+      var sw = s.v/20000*avS, hw = s.v/20000*w;
+      el("path", {d:vrib(sx, sx+sw, yb+8, hx, hx+hw, yh), fill:"#9db2ce", "fill-opacity":.45}, svg);
+      el("rect", {x:sx, y:yb, width:sw, height:8, rx:2, fill:"#10253f", "fill-opacity":op[i]}, svg);
+      sx += sw + G; hx += hw;
+    });
+    el("rect", {x:0, y:yh, width:w, height:HUB, rx:8, fill:"#10253f"}, svg);
+    var ht = el("text", {x:w/2, y:yh+22.5, "text-anchor":"middle"}, svg);
+    tspan(ht, "vhm", "신규 기금 "); tspan(ht, "vhv", "2조 원"); tspan(ht, "vhm", "  ·  임기 4년");
+    var avC = w - G*(m-1), cx = 0, hx2 = 0;
+    DATA.cats.forEach(function(c, i){
+      var cw = c.v/20000*avC, hw = c.v/20000*w;
+      var b = el("path", {d:vrib(hx2, hx2+hw, yh2, cx, cx+cw, yc), fill:c.c, "fill-opacity":.42, "class":"vband", data:{i:i}}, svg);
+      var r = el("rect", {x:cx, y:yc, width:cw, height:10, rx:2, fill:c.c, "class":"vseg", data:{i:i}}, svg);
+      b.addEventListener("click", function(){ toggleCat(i); });
+      r.addEventListener("click", function(){ toggleCat(i); });
+      cx += cw + G; hx2 += hw;
+    });
+    h("div", "hcf-lcap hcf-vcap", "배분 구조", vBox);
+    var wrap = h("div", "hcf-vcats", null, vBox);
+    DATA.cats.forEach(function(c, i){
+      var d = h("details", "hcf-vcat", null, wrap); d.style.setProperty("--c", c.c); d.dataset.i = i;
+      var row = h("div", "hcf-vrow", null, h("summary", "", null, d));
+      h("span", "hcf-sw", null, row); h("span", "hcf-nm", c.name, row); h("span", "hcf-amt", fmt(c.v), row);
+      var chev = document.createElementNS(NS, "svg"); chev.setAttribute("viewBox","0 0 16 16"); chev.setAttribute("class","hcf-chev"); chev.setAttribute("aria-hidden","true");
+      var pth = document.createElementNS(NS, "path"); pth.setAttribute("d","M3.5 6l4.5 4.5L12.5 6"); pth.setAttribute("fill","none"); pth.setAttribute("stroke","currentColor"); pth.setAttribute("stroke-width","2"); pth.setAttribute("stroke-linecap","round"); pth.setAttribute("stroke-linejoin","round");
+      chev.appendChild(pth); row.appendChild(chev);
+      itemsInto(h("ul", "hcf-items", null, d), c);
+      d.addEventListener("toggle", function(){
+        /* 연 분야는 목록 맨 위로 올리고, 모두 닫히면 원래 순서로 되돌린다 */
+        var inOrder = function(){ Array.prototype.slice.call(wrap.children).sort(function(a, b){ return a.dataset.i - b.dataset.i; }).forEach(function(o){ wrap.appendChild(o); }); };
+        if(d.open){
+          wrap.querySelectorAll("details.hcf-vcat").forEach(function(o){ if(o !== d) o.open = false; });
+          inOrder(); wrap.insertBefore(d, wrap.firstChild);
+          if(!vRestoring) scrollToHub();
+        } else if(!wrap.querySelector("details.hcf-vcat[open]")) inOrder();
+        markV();
+      });
+      if(i === openI){ vRestoring = true; d.open = true; setTimeout(function(){ vRestoring = false; }, 50); }
+    });
+    markV();
   }
 
   /* ---------- 화면 맞춤 ---------- */
@@ -1299,9 +1419,9 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
   function layoutMode(){
     var narrow = root.clientWidth < NARROW;
     root.classList.toggle("hcf-narrow", narrow);
-    var list = narrow || root.classList.contains("hcf-showlist");
+    var list = root.classList.contains("hcf-showlist");
     listBox.hidden = !list;
-    noteBox.innerHTML = list || TOUCH ? NOTE_LIST : NOTE_WIDE;
+    noteBox.innerHTML = narrow || list || TOUCH ? NOTE_LIST : NOTE_WIDE;
     return narrow;
   }
   /* 흐름도는 글자 폭을 재서 배치하므로 글꼴을 기다린다(최대 2.5초). 목록은 기다리지 않는다. */
@@ -1319,7 +1439,7 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
   function renderAll(){
     renderCallout();
     renderList();
-    if(!layoutMode()) withFonts(drawChart);
+    if(!layoutMode()) withFonts(drawChart); else renderVFlow();
   }
 
   /* ---------- 버튼 ---------- */
@@ -1328,7 +1448,7 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
       aud = b.dataset.aud; pinned = null;
       root.querySelectorAll(".hcf-seg button").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
       renderCallout(); renderList();
-      if(!root.classList.contains("hcf-narrow")) withFonts(drawChart);
+      if(!root.classList.contains("hcf-narrow")) withFonts(drawChart); else renderVFlow();
     });
   });
   root.querySelector(".hcf-listbtn").addEventListener("click", function(e){
@@ -1357,7 +1477,7 @@ footer{background:#fff;padding:28px 0 44px;color:#9AA4B3;font-size:12px}
   addEventListener("resize", function(){
     clearTimeout(rt);
     rt = setTimeout(function(){
-      if(Math.abs(root.clientWidth - lastW) < 2 && Math.abs(innerHeight - lastH) < 40) return;
+      if(Math.abs(root.clientWidth - lastW) < 2 && (root.classList.contains("hcf-narrow") || Math.abs(innerHeight - lastH) < 40)) return;
       lastW = root.clientWidth; lastH = innerHeight; animated = true; renderAll();
     }, 180);
   });
